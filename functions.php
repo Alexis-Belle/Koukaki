@@ -9,6 +9,16 @@ wp_enqueue_style(
     array('parent-style'),
     wp_get_theme()->get('Version')
 );
+
+// JavaScript
+    wp_enqueue_script(
+        'foce-main-script',
+        get_stylesheet_directory_uri() . '/assets/js/main.js',
+        array(), // tu peux mettre array('jquery') si besoin
+        wp_get_theme()->get('Version'),
+        true // chargement dans le footer
+    );
+
 }
 
 

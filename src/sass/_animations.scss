@@ -1,3 +1,4 @@
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -8,6 +9,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -18,6 +20,7 @@
     transform: translateY(0);
   }
 }
+
 .fade-in-up {
   animation: fadeInUp 1.2s ease-out forwards;
   opacity: 0;
@@ -28,10 +31,14 @@
   opacity: 0;
 }
 
+
+// Annulations éléments statiques
 .fade-in-up p {
   animation: fadeInDown 1.2s ease-out forwards;
 }
 
 .banner.fade-in-down img {
   animation: fadeInUp 1.2s ease-out forwards;
-}/*# sourceMappingURL=main.css.map */
+}
+
+
