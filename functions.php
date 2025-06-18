@@ -3,6 +3,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
+// CSS
 wp_enqueue_style(
     'foce-main-style',
     get_stylesheet_directory_uri() . '/assets/css/main.css',
@@ -12,11 +13,19 @@ wp_enqueue_style(
 
 // JavaScript
     wp_enqueue_script(
-        'foce-main-script',
-        get_stylesheet_directory_uri() . '/assets/js/main.js',
-        array(), // tu peux mettre array('jquery') si besoin
+        'foce-animation-init',
+        get_stylesheet_directory_uri() . '/js/animation-init.js',
+        array(),
         wp_get_theme()->get('Version'),
-        true // chargement dans le footer
+        true
+    );
+
+    wp_enqueue_script(
+        'foce-scroll',
+        get_stylesheet_directory_uri() . '/js/scroll.js',
+        array(),
+        wp_get_theme()->get('Version'),
+        true
     );
 
 }

@@ -1,44 +1,81 @@
+.fade-in-up,
+.fade-in-down {
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown 1.2s ease-out forwards;
+}
 
 @keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(100px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes fadeInDown {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(-100px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.fade-in-up {
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0;
-}
 
-.fade-in-down {
-  animation: fadeInDown 1.2s ease-out forwards;
-  opacity: 0;
+.animation-wrapper {
+  all: unset;
+  display: contents;
 }
 
 
-// Annulations éléments statiques
-.fade-in-up p {
-  animation: fadeInDown 1.2s ease-out forwards;
+
+
+
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.banner.fade-in-down img {
-  animation: fadeInUp 1.2s ease-out forwards;
+/* Rotation uniquement pour les fleurs */
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  animation: rotate-flower 6s linear infinite;
+  transform-origin: center center;
+  display: inline-block;
 }
 
+
+
+#oscars {
+  display: flex;
+  justify-content: center; // centre le contenu horizontalement
+  align-items: center;     // centre le contenu verticalement
+  height: 350px;       // donne de la hauteur visible au fond
+  background-image: url('../../assets/orange_place_bg.png');
+  background-size: contain; // garde les proportions du flou orange
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
 

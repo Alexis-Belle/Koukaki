@@ -9,7 +9,7 @@
             );
             $characters_query = new WP_Query($args);
             ?>
-            <article id="characters">
+
                 <div class="main-character">
                     <h3>Les personnages</h3>
                     <?php
@@ -34,4 +34,3 @@
                     }
                     ?>
                 </div>
-            </article>
