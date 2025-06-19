@@ -44,27 +44,103 @@
     transform: rotate(360deg);
   }
 }
-/* Rotation uniquement pour les fleurs */
 .story h2::after,
 .story__article::after,
 #studio h2::before,
 #studio h2::after,
 .site-footer::before,
 .site-footer::after,
-.site-footer ul::after {
+.site-footer ul::after,
+.flower {
   animation: rotate-flower 6s linear infinite;
   transform-origin: center center;
-  display: inline-block;
+}
+
+.site-footer::before,
+.site-footer::after {
+  display: none;
+}
+
+.flower {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flower--sunflower {
+  background-image: url("../../assets/Sunflower.png");
+  width: 12em;
+  height: 12em;
+  top: -9vh;
+  left: 5vw;
+}
+
+.flower--orchid {
+  background-image: url("../../assets/orchid.png");
+  width: 10em;
+  height: 10em;
+  top: -10vh;
+  right: -7vw;
 }
 
 #oscars {
+  margin-top: 6%;
+  position: relative;
+}
+
+.oscars-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 350px;
-  background-image: url("../../assets/orange_place_bg.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 2rem;
+  margin: auto;
+  width: 100%;
+}
+
+.oscars-cloud {
+  background: url("../../assets/nuage_orange_oscar.png") no-repeat center;
+  background-size: 103%;
+  padding: 4rem 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+}
+
+.oscars-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: clamp(1.5rem, 4vw, 42px);
+  padding: 0;
+  margin: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: -0.02em;
+  line-height: 52px;
+}
+
+.oscars-wrapper img {
+  width: 25%;
+}
+
+@media (max-width: 1040px) {
+  .oscars-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .oscars-wrapper img {
+    width: 40%;
+  }
+}
+@media (max-width: 720px) {
+  .oscars-wrapper img {
+    width: 60%;
+  }
+  .oscars-title {
+    font-size: 24px;
+    align-items: center;
+  }
 }/*# sourceMappingURL=main.css.map */

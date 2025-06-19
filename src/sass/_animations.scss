@@ -1,3 +1,6 @@
+
+// EFFET D'APPARITION DES SECTIONS ET TITRES SUR LE SITE
+
 .fade-in-up,
 .fade-in-down {
   opacity: 0;
@@ -33,13 +36,11 @@
   }
 }
 
-
+// Retire les propriétés de l'article qui entoure le template story
 .animation-wrapper {
   all: unset;
   display: contents;
 }
-
-
 
 
 
@@ -52,30 +53,114 @@
   }
 }
 
-/* Rotation uniquement pour les fleurs */
+// ANIMATION DES FLEURS
 .story h2::after,
 .story__article::after,
 #studio h2::before,
 #studio h2::after,
 .site-footer::before,
 .site-footer::after,
-.site-footer ul::after {
+.site-footer ul::after,
+.flower {
   animation: rotate-flower 6s linear infinite;
   transform-origin: center center;
-  display: inline-block;
+}
+
+// Masquage des fleurs du footer pendant Oscars
+.site-footer::before,
+.site-footer::after {
+  display: none;
+}
+
+// Fleurs flottantes indépendantes
+.flower {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flower--sunflower {
+  background-image: url('../../assets/Sunflower.png');
+  width: 12em;
+  height: 12em;
+  top: -9vh;
+  left: 5vw;
+}
+
+.flower--orchid {
+  background-image: url('../../assets/orchid.png');
+  width: 10em;
+  height: 10em;
+  top: -10vh;
+  right: -7vw;
+}
+
+// Section Oscars
+
+#oscars {
+  margin-top:6%;
+  position: relative;
 }
 
 
-
-#oscars {
+.oscars-wrapper {
   display: flex;
-  justify-content: center; // centre le contenu horizontalement
-  align-items: center;     // centre le contenu verticalement
-  height: 350px;       // donne de la hauteur visible au fond
-  background-image: url('../../assets/orange_place_bg.png');
-  background-size: contain; // garde les proportions du flou orange
-  background-repeat: no-repeat;
-  background-position: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: auto;
+  width: 100%;
+}
+
+.oscars-cloud {
+  background: url('../../assets/nuage_orange_oscar.png') no-repeat center;
+  background-size: 103%;
+  padding: 4rem 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
+
+.oscars-title {
+  display:flex;
+  flex-direction:column;
+  align-items: flex-start;
+  font-size: clamp(1.5rem, 4vw, 42px);
+  padding:0;
+  margin: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: -0.02em;
+  line-height: 52px;
+}
+
+.oscars-wrapper img {
+  width: 25%;
+}
+
+
+@media (max-width: 1040px) {
+  .oscars-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .oscars-wrapper img {
+    width: 60%;
+  }
+
+  .oscars-title {
+    font-size: 24px;
+    align-items: center;
+  }
+}
