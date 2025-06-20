@@ -1,19 +1,27 @@
 
 // EFFET D'APPARITION DES SECTIONS ET TITRES SUR LE SITE
 
-.fade-in-up,
-.fade-in-down {
-  opacity: 0;
-}
-
 .fade-in-up {
   animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0; 
+}
+
+.fade-in-up p {
+  animation: fadeInDown 1.2s ease-out forwards;
+  opacity: 0; 
 }
 
 .fade-in-down {
   animation: fadeInDown 1.2s ease-out forwards;
+  opacity: 0;
 }
 
+.fade-in-down img {
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+// ANIMATIONS
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -35,6 +43,7 @@
     transform: translateY(0);
   }
 }
+
 
 // Retire les propriétés de l'article qui entoure le template story
 .animation-wrapper {
@@ -133,6 +142,7 @@
   padding:0;
   margin: 0;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFF5E9;
   letter-spacing: -0.02em;
   line-height: 52px;
 }
@@ -162,5 +172,28 @@
   .oscars-title {
     font-size: 24px;
     align-items: center;
+  }
+}
+
+
+// Animation des Titres h2 h3
+
+h2 span, h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+h2.visible span, h3.visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2.visible span, h3.visible span {
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 0.25}s;
+    }
   }
 }

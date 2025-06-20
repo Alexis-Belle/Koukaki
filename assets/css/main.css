@@ -1,14 +1,21 @@
-.fade-in-up,
-.fade-in-down {
+.fade-in-up {
+  animation: fadeInUp 1.2s ease-out forwards;
   opacity: 0;
 }
 
-.fade-in-up {
-  animation: fadeInUp 1.2s ease-out forwards;
+.fade-in-up p {
+  animation: fadeInDown 1.2s ease-out forwards;
+  opacity: 0;
 }
 
 .fade-in-down {
   animation: fadeInDown 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-down img {
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0;
 }
 
 @keyframes fadeInUp {
@@ -117,6 +124,7 @@
   padding: 0;
   margin: 0;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFF5E9;
   letter-spacing: -0.02em;
   line-height: 52px;
 }
@@ -143,4 +151,76 @@
     font-size: 24px;
     align-items: center;
   }
+}
+h2 span, h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+h2.visible span, h3.visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2.visible span:nth-child(1), h3.visible span:nth-child(1) {
+  transition-delay: 0s;
+}
+h2.visible span:nth-child(2), h3.visible span:nth-child(2) {
+  transition-delay: 0.25s;
+}
+h2.visible span:nth-child(3), h3.visible span:nth-child(3) {
+  transition-delay: 0.5s;
+}
+h2.visible span:nth-child(4), h3.visible span:nth-child(4) {
+  transition-delay: 0.75s;
+}
+h2.visible span:nth-child(5), h3.visible span:nth-child(5) {
+  transition-delay: 1s;
+}
+h2.visible span:nth-child(6), h3.visible span:nth-child(6) {
+  transition-delay: 1.25s;
+}
+h2.visible span:nth-child(7), h3.visible span:nth-child(7) {
+  transition-delay: 1.5s;
+}
+h2.visible span:nth-child(8), h3.visible span:nth-child(8) {
+  transition-delay: 1.75s;
+}
+h2.visible span:nth-child(9), h3.visible span:nth-child(9) {
+  transition-delay: 2s;
+}
+h2.visible span:nth-child(10), h3.visible span:nth-child(10) {
+  transition-delay: 2.25s;
+}
+h2.visible span:nth-child(11), h3.visible span:nth-child(11) {
+  transition-delay: 2.5s;
+}
+h2.visible span:nth-child(12), h3.visible span:nth-child(12) {
+  transition-delay: 2.75s;
+}
+h2.visible span:nth-child(13), h3.visible span:nth-child(13) {
+  transition-delay: 3s;
+}
+h2.visible span:nth-child(14), h3.visible span:nth-child(14) {
+  transition-delay: 3.25s;
+}
+h2.visible span:nth-child(15), h3.visible span:nth-child(15) {
+  transition-delay: 3.5s;
+}
+h2.visible span:nth-child(16), h3.visible span:nth-child(16) {
+  transition-delay: 3.75s;
+}
+h2.visible span:nth-child(17), h3.visible span:nth-child(17) {
+  transition-delay: 4s;
+}
+h2.visible span:nth-child(18), h3.visible span:nth-child(18) {
+  transition-delay: 4.25s;
+}
+h2.visible span:nth-child(19), h3.visible span:nth-child(19) {
+  transition-delay: 4.5s;
+}
+h2.visible span:nth-child(20), h3.visible span:nth-child(20) {
+  transition-delay: 4.75s;
 }/*# sourceMappingURL=main.css.map */
