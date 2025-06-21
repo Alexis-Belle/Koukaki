@@ -1,3 +1,5 @@
+
+// ANIMATION CHARGEMENT PROGRESSIF FADE IN
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll('.fade-in-up, .fade-in-down');
 
@@ -22,3 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+
+// ANIMATION FLOTTANTE TITRE BANNIERE HEADER
+

@@ -29,6 +29,23 @@ function theme_enqueue_styles()
         true
     );
 
+
+    // GSAP + ScrollTrigger
+    wp_enqueue_script(
+        'gsap',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+        array(),
+        '3.12.2',
+        true
+    );
+
+    wp_enqueue_script(
+        'gsap-scrolltrigger',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
+        array('gsap'),
+        '3.12.2',
+        true
+    );
 }
 
 
@@ -42,3 +59,4 @@ if (get_stylesheet() !== get_template()) {
         return get_option('theme_mods_' . get_template(), $default);
     });
 }
+
