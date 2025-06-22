@@ -29,3 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ANIMATION FLOTTANTE TITRE BANNIERE HEADER
 
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof skrollr !== "undefined") {
+    skrollr.init({
+      forceHeight: false
+    });
+  }
+});
+
+

@@ -29,21 +29,12 @@ function theme_enqueue_styles()
         true
     );
 
-
-    // GSAP + ScrollTrigger
+    // Skrollr
     wp_enqueue_script(
-        'gsap',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js',
+        'skrollr',
+        'https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js',
         array(),
-        '3.12.2',
-        true
-    );
-
-    wp_enqueue_script(
-        'gsap-scrolltrigger',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
-        array('gsap'),
-        '3.12.2',
+        null,
         true
     );
 }

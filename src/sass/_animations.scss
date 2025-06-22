@@ -198,11 +198,9 @@ h2.visible span, h3.visible span {
 
 // ANIMATION BANNIERE HEADER
 
-
 .banner {
   position: relative;
   overflow: hidden;
-
 
   // Contenu par-dessus la vidéo
   .banner-content {
@@ -210,7 +208,7 @@ h2.visible span, h3.visible span {
     z-index: 2;
     text-align: center;
 
-    // Flottement appliqué à tout le bloc (logo inclus)
+    // Flottement logo
     &.floating-title {
       animation: floatLogo 2s cubic-bezier(.57,.96,.43,.06) infinite;
       will-change: transform;
@@ -245,8 +243,15 @@ h2.visible span, h3.visible span {
 
 }
 
+.title-wrapper {
+  position: relative;
+  z-index: 3;
+  height: auto;
+  will-change: transform;
+}
+
   .banner img {
-    width: 100%;
+    width: 90%;
   }
 
 
@@ -258,14 +263,16 @@ h2.visible span, h3.visible span {
   .banner .fallback-img {
     display: block;
   }
+
   .floating-title {
   animation: none !important;
   }
-    .banner img {
-    width: 80%;
+  .title-wrapper {
+    transform: none !important;
+    position: static;
   }
-}
 
+}
 
 
 @keyframes floatLogo {
