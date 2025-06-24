@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ANIMATION FLOTTANTE TITRE BANNIERE HEADER
+// Initialisation de Skrollr
 
 document.addEventListener("DOMContentLoaded", function () {
   if (typeof skrollr !== "undefined") {
@@ -38,3 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 30,
+        depth: 100,
+        slideShadows: true,
+      },
+      pagination: { el: '.swiper-pagination', clickable: true },
+    });
+  }
+});

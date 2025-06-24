@@ -292,3 +292,20 @@ h2.visible span, h3.visible span {
     transform: translate(0, 0);
   }
 }
+
+
+
+
+
+
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+.swiper-slide {
+  background: #eee;
+  padding: 60px;
+  text-align: center;
+  font-size: 24px;
+}

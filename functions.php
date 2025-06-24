@@ -1,10 +1,21 @@
 <?php
-add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
-function theme_enqueue_styles()
-{
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+add_action('wp_enqueue_scripts', 'foce_enqueue_assets');
+function foce_enqueue_assets() {
+    // Style parent
+    wp_enqueue_style(
+        'parent-style',
+        get_template_directory_uri() . '/style.css'
+    );
 
-    // CSS
+    // Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css',
+        array(),
+        '11.2.8'
+    );
+
+    // CSS principal
     wp_enqueue_style(
         'foce-main-style',
         get_stylesheet_directory_uri() . '/assets/css/main.css',
@@ -12,15 +23,34 @@ function theme_enqueue_styles()
         wp_get_theme()->get('Version')
     );
 
-    // JavaScript
+    // Swiper JS (doit être chargé AVANT animation-init.js)
+    wp_enqueue_script(
+        'swiper-js',
+        get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js',
+        array(),
+        '11.2.8',
+        true
+    );
+
+    // Skrollr
+    wp_enqueue_script(
+        'skrollr',
+        get_stylesheet_directory_uri() . '/assets/js/skrollr.min.js',
+        array(),
+        '0.6.30',
+        true
+    );
+
+    // JS d'animation (avec Swiper en dépendance !)
     wp_enqueue_script(
         'foce-animation-init',
         get_stylesheet_directory_uri() . '/js/animation-init.js',
-        array(),
+        array('swiper-js'),
         wp_get_theme()->get('Version'),
         true
     );
 
+    // Autre script
     wp_enqueue_script(
         'foce-scroll',
         get_stylesheet_directory_uri() . '/js/scroll.js',
@@ -28,16 +58,8 @@ function theme_enqueue_styles()
         wp_get_theme()->get('Version'),
         true
     );
-
-    // Skrollr
-    wp_enqueue_script(
-        'skrollr',
-        'https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js',
-        array(),
-        null,
-        true
-    );
 }
+
 
 
 // Get customizer options form parent theme
