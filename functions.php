@@ -7,14 +7,6 @@ function foce_enqueue_assets() {
         get_template_directory_uri() . '/style.css'
     );
 
-    // Swiper CSS
-    wp_enqueue_style(
-        'swiper-css',
-        get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css',
-        array(),
-        '11.2.8'
-    );
-
     // CSS principal
     wp_enqueue_style(
         'foce-main-style',
@@ -23,14 +15,23 @@ function foce_enqueue_assets() {
         wp_get_theme()->get('Version')
     );
 
-    // Swiper JS (doit être chargé AVANT animation-init.js)
+    // Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        get_stylesheet_directory_uri() . '/assets/css/swiper-bundle.min.css',
+        array(),
+        '11.2.8'
+    );
+
+    // Swiper Element (local)
     wp_enqueue_script(
-        'swiper-js',
-        get_stylesheet_directory_uri() . '/assets/js/swiper-bundle.min.js',
+        'swiper-element',
+        get_stylesheet_directory_uri() . '/assets/js/swiper-element-bundle.min.js',
         array(),
         '11.2.8',
         true
     );
+
 
     // Skrollr
     wp_enqueue_script(
@@ -41,7 +42,7 @@ function foce_enqueue_assets() {
         true
     );
 
-    // JS d'animation (avec Swiper en dépendance !)
+    // JS d'animation
     wp_enqueue_script(
         'foce-animation-init',
         get_stylesheet_directory_uri() . '/js/animation-init.js',
@@ -50,7 +51,7 @@ function foce_enqueue_assets() {
         true
     );
 
-    // Autre script
+    // JS scroll
     wp_enqueue_script(
         'foce-scroll',
         get_stylesheet_directory_uri() . '/js/scroll.js',
@@ -58,8 +59,10 @@ function foce_enqueue_assets() {
         wp_get_theme()->get('Version'),
         true
     );
-}
 
+    
+
+}
 
 
 // Get customizer options form parent theme
