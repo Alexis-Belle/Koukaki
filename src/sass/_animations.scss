@@ -297,43 +297,67 @@ h2.visible span, h3.visible span {
 
 
 
-// Animation partie personnage
+// ANIMATION PARTIE PERSONNAGE
 
 .story #characters h3 {
   display: flex;
   align-items: flex-start;
   gap: 0.25em;
-  padding-left: 10%;
-  background-position: 10% center;
-}
-
-.characters-swiper {
-  margin-top:2%;
-  width: 85%;
+  padding-left: 35px;
+  background-position: 0% center;
 }
 
 swiper-slide {
-  width: 17vw;
+  width: 33%;
   text-align: center;
+  pointer-events: none;
 }
+
 swiper-slide img {
-  width: 100%;
+  width: 20vw;
 }
 
 @media (max-width: 1040px) {
-  .characters-swiper {
-  width: 80%;
+
+  .story #characters h3 {
+  display: block;
+  background-position: center;
+  padding-left: 10%;
+  gap: 0em;
+
 }
-  .swipper-wrapper {
-  width: 80%;
-  }
 }
 
-@media (max-width: 720px) {
-  .characters-swiper {
-    width: 60%;
+
+
+// ANIMATION PARTIE LIEU
+
+.story #place {
+	background-image: url("../../assets/Studio_Koukaki-image_place.png");
+  position: relative;
 }
-  .swipper-wrapper {
-  width: 80%;
-  }
+
+/* Nuages généraux */
+.cloud {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+  filter:blur(14px)
+}
+
+/* Nuage du haut */
+.cloud--big {
+  right: 5vw;  
+  top: 4rem;    
+}
+
+/* Nuage du bas */
+.cloud--little {
+  right: 32vw;    
+  top: 18rem;  
+}
+
+
+@media (max-width: 1040px) {
+
 }

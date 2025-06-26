@@ -46,10 +46,11 @@ function foce_enqueue_assets() {
     wp_enqueue_script(
         'foce-animation-init',
         get_stylesheet_directory_uri() . '/js/animation-init.js',
-        array('swiper-js'),
+        array('swiper-element', 'skrollr'),
         wp_get_theme()->get('Version'),
         true
     );
+
 
     // JS scroll
     wp_enqueue_script(

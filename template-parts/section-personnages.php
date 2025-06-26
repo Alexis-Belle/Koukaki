@@ -11,8 +11,9 @@
             ?>
                 <div class="main-character">
                     <h3>Les personnages</h3>
-                    <swiper-container class="characters-swiper" slides-per-view="auto" centered-slides="true" effect="coverflow" 
-                    loop="true" space-between="50" navigation="true" pagination="false" grab-cursor="true">
+                    <swiper-container class="characters-swiper" slides-per-view="auto" slides-per-group="1" centered-slides="true" 
+                    loop="true" space-between="0" navigation="false" pagination="false" grab-cursor="false">
+
                         <?php while ( $characters_query->have_posts() ) : $characters_query->the_post(); ?>
                             <swiper-slide>
                             <figure>
