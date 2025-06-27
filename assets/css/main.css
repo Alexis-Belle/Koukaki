@@ -338,6 +338,10 @@ swiper-slide img {
   position: relative;
 }
 
+.story #place h3 {
+  z-index: 3;
+}
+
 /* Nuages généraux */
 .cloud {
   position: absolute;
@@ -349,11 +353,29 @@ swiper-slide img {
 /* Nuage du haut */
 .cloud--big {
   right: 5vw;
-  top: 4rem;
+  top: 6rem;
 }
 
 /* Nuage du bas */
 .cloud--little {
   right: 32vw;
   top: 18rem;
+}
+
+@media (max-width: 920px) {
+  .story #place {
+    background-image: url("../../assets/place_bg.png");
+  }
+  .cloud {
+    display: none;
+  }
+}
+.main-navigation {
+  display: flex;
+  position: relative;
+}
+
+.menu-toggle {
+  display: inline-block;
+  margin: 0 !important;
 }/*# sourceMappingURL=main.css.map */

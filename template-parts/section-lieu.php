@@ -8,10 +8,10 @@
 <img  src="<?php echo get_stylesheet_directory_uri(); ?>/assets/big_cloud.png"
         class="cloud cloud--big"
         data-anchor-target="#place"
-        data-500-bottom="transform: translateX(0vh);" data--100-bottom="transform: translateX(-30vh);" />
+        data-600-bottom="transform: translateX(0vw);" data--0-bottom="transform: translateX(-25vw);" />
 
   <!-- Nuage du bas -->
   <img  src="<?php echo get_stylesheet_directory_uri(); ?>/assets/little_cloud.png"
         class="cloud cloud--little"
         data-anchor-target="#place"
-        data-500-bottom="transform: translateX(0vh);" data--100-bottom="transform: translateX(-30vh);" />
+        data-600-bottom="transform: translateX(0vw);" data--0-bottom="transform: translateX(-25vw);" />
