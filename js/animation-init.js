@@ -53,3 +53,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burger  = document.querySelector('.menu-toggle');
+  const overlay = document.querySelector('.menu-header');
+  const body    = document.body;
+
+  burger.addEventListener('click', () => {
+    const open = body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', open);
+    overlay.hidden = !open;
+    body.style.overflow = open ? 'hidden' : '';  // bloque scroll
+  });
+
+  // Ferme au clic sur un lien
+  overlay.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', () => {
+      body.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+      overlay.hidden = true;
+      body.style.overflow = '';
+    });
+  });
+});
+
+
+
+
+
+

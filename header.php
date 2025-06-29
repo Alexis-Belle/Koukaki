@@ -27,21 +27,31 @@
 
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
+            <div class="nav-spacer"></div>
             <ul>
-                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+                <li class="site-title">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                </li>
             </ul>
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
+            <div class="menu-container">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+            
+
 		</nav><!-- #site-navigation -->
+             <!-- Panneau overlay -->
+            <div class="menu-header" hidden>
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo_simple.png">
+            <ul>
+                <li><a href="#story">Histoire</a></li>
+                <li><a href="#characters">Personnages</a></li>
+                <li><a href="#place">Lieu</a></li>
+                <li><a href="#studio">Studio&nbsp;Koukaki</a></li>
+            </ul>
+            <span>STUDIO KOUKAKI</span>
+            </div>
 	</header><!-- #masthead -->
-
-
-    <!-- MIS DE COTE POUR IMPLEMENTATION
-
-    <li><a href="#story">Histoire</a></li>
-    <li><a href="#characters">Personnages</a></li>
-    <li><a href="#place">Lieu</a></li>
-    <li><a href="#studio">Studio Koukaki</a></li> -->
