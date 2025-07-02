@@ -293,7 +293,11 @@ h2.visible span, h3.visible span {
   }
 }
 
-
+@keyframes floatCat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 
 
 
@@ -420,36 +424,40 @@ display:none;
   display:flex; 
   flex-direction:column; 
   align-items:center;
-  opacity:0;
   visibility:hidden; 
   z-index:9;   
   inset:0;
   gap:5vh;
   padding-bottom:100%;
+  opacity:0;
 }
+
 .menu-open .menu-header{ 
-  opacity:1; 
   visibility:visible; 
   pointer-events:auto;
 	position: sticky;
 	top: 0;
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0; 
 }
 
 
 .menu-header img {
-  width: 8%;
-  margin-top:5vh;
-  filter:drop-shadow(0px 0px 27px #FF5C0099);
+  width: clamp(80px, 12vw, 120px);
+  height: auto;
+  margin-top:3vh;
+  filter:drop-shadow(0px 0px 10px #FF5C0099);
 }
 
 /* lien */
 .menu-header ul{ 
   list-style:none; 
-  margin:0; 
+  margin:-30px 0 0 0; 
   padding:0; 
   text-align:center;
-  font-size: 48px;
-  line-height: 13vh;
+  font-size: clamp(24px, 6vw, 42px);
+  line-height: 15vh;
+  z-index: 3;
 }
 .menu-header a{
   text-decoration:none; 
@@ -458,11 +466,92 @@ display:none;
 
 .menu-header a:hover {
   color:black;
-  filter:drop-shadow(0px 0px 6px #FF5C00)
+  filter:drop-shadow(0px 0px 5px #FF5C00)
 }
 
 
-@media (max-width: 700px) {
+// Positionnement des chats et des fleurs
+
+.menu-header .cat {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+  width: 8em;
+  height: 8em;
+  animation: floatCat 2s infinite;
+  will-change: transform;
+
+  &.purple_cat {
+    background-image: url('../../assets/purple_cat.png');
+    top: 11vh;
+    left: 22vw;
+  }
+  &.gray_cat {
+    background-image: url('../../assets/gray_cat.png');
+    top: 45vh;
+    right: 22vw;
+  }
+  &.orange_cat {
+    background-image: url('../../assets/orange_cat.png');
+    top: 64vh;
+    left: 2vw;
+  }
+}
+
+
+.menu-header .flower {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  &.orchid {
+    background-image: url('../../assets/orchid.png');
+    width: 8em;
+    height: 8em;
+    top: 4vh;
+    left: -3vw;
+  }
+  &.sunflower {
+    background-image: url('../../assets/sunflower.png');
+    width: 11em;
+    height: 11em;
+    top: 5vh;
+    right: 20vw;
+  }
+  &.random_flower {
+    background-image: url('../../assets/random_flower.png');
+    width: 4em;
+    height: 4em;
+    top: 35vh;
+    right: -1vw;
+  }
+  &.multi_flowers {
+    background-image: url('../../assets/multi_flowers.png');
+    width: 4em;
+    height: 4em;
+    top: 44vh;
+    left: 18vw;
+  }
+    &.hibiscus_footer {
+    background-image: url('../../assets/hibiscus_footer.png');
+    width: 30em;
+    height: 30em;
+    top: 60vh;
+    right: -14vw;
+  }
+}
+
+
+@media (max-width: 768px) {
+.menu-header .flower, .menu-header .cat {
+  display:none;
+}
+.menu-header {
+ background: url('../../assets/background_menu_container.png') center / cover no-repeat;
+}
 .nav-spacer, .main-navigation ul {
   display:none !important;
 }
