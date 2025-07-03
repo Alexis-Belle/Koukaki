@@ -65,7 +65,6 @@ function foce_enqueue_assets() {
 
 }
 
-
 // Get customizer options form parent theme
 if (get_stylesheet() !== get_template()) {
     add_filter('pre_update_option_theme_mods_' . get_stylesheet(), function ($value, $old_value) {

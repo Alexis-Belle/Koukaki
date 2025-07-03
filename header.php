@@ -45,15 +45,15 @@
 		</nav><!-- #site-navigation -->
              <!-- Panneau overlay -->
             <div class="menu-header" hidden>
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo_simple.png">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/UI/logo_simple.png">
                 <ul>
-                    <li><a href="#story">Histoire</a></li>
+                    <li><a href="#tale">Histoire</a></li>
                     <li><a href="#characters">Personnages</a></li>
                     <li><a href="#place">Lieu</a></li>
                     <li><a href="#studio">Studio&nbsp;Koukaki</a></li>
                 </ul>
                 <span>STUDIO KOUKAKI</span>
-                            <!-- Fleurs -->
+                <!-- Fleurs -->
                 <div class="flower orchid"></div>
                 <div class="flower sunflower"></div>
                 <div class="flower hibiscus_footer"></div>

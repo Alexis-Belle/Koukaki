@@ -1,28 +1,6 @@
 
-// EFFET D'APPARITION DES SECTIONS ET TITRES SUR LE SITE
+// ANIMATIONS GLOBALES
 
-.fade-in-up {
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0; 
-}
-
-.fade-in-up p {
-  animation: fadeInDown 1.2s ease-out forwards;
-  opacity: 0; 
-}
-
-.fade-in-down {
-  animation: fadeInDown 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-.fade-in-down img {
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-
-// ANIMATIONS
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -45,12 +23,6 @@
   }
 }
 
-// Retire les propriétés de l'article qui entoure le template story
-.animation-wrapper {
-  all: unset;
-  display: contents;
-}
-
 @keyframes rotate-flower {
   from {
     transform: rotate(0deg);
@@ -58,6 +30,48 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes floatLogo {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(4px, -6px); }
+  50%  { transform: translate(0, 4px); }
+  75%  { transform: translate(-4px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatCat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+// EFFET D'APPARITION DES SECTIONS ET TITRES SUR LE SITE
+
+.fade-in-up,
+.fade-in-down,
+.fade-in-up p,
+.fade-in-down img {
+  opacity: 0;
+}
+
+.fade-in-up,
+.fade-in-down img {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.fade-in-down,
+.fade-in-up p {
+  animation: fadeInDown 1.2s ease-out forwards;
+}
+
+
+
+// Retire les propriétés de l'article qui entoure le template story
+.animation-wrapper {
+  all: unset;
+  display: contents;
 }
 
 
@@ -90,7 +104,7 @@
 }
 
 .flower--sunflower {
-  background-image: url('../../assets/Sunflower.png');
+  background-image: url('../../assets/images/decorations/Sunflower.png');
   width: 12em;
   height: 12em;
   top: -9vh;
@@ -98,7 +112,7 @@
 }
 
 .flower--orchid {
-  background-image: url('../../assets/orchid.png');
+  background-image: url('../../assets/images/decorations/orchid.png');
   width: 10em;
   height: 10em;
   top: -10vh;
@@ -123,7 +137,7 @@
 }
 
 .oscars-cloud {
-  background: url('../../assets/nuage_orange_oscar.png') no-repeat center;
+  background: url('../../assets/images/decorations/nuage_orange_oscar.png') no-repeat center;
   background-size: 103%;
   padding: 4rem 2.8rem;
   display: flex;
@@ -275,32 +289,6 @@ h2.visible span, h3.visible span {
 }
 
 
-@keyframes floatLogo {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(4px, -6px);
-  }
-  50% {
-    transform: translate(0, 4px);
-  }
-  75% {
-    transform: translate(-4px, -3px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes floatCat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-
-
 // ANIMATION PARTIE PERSONNAGE
 
 .story #characters h3 {
@@ -333,11 +321,10 @@ swiper-slide img {
 }
 
 
-
 // ANIMATION PARTIE LIEU
 
 .story #place {
-	background-image: url("../../assets/Studio_Koukaki-image_place.png");
+	background-image: url("../../assets/images/backgrounds/Studio_Koukaki-image_place.png");
   position: relative;
 }
 
@@ -369,7 +356,7 @@ z-index: 3;
 
 @media (max-width: 920px) {
 .story #place {
-  background-image: url("../../assets/place_bg.png");
+  background-image: url("../../assets/images/backgrounds/place_bg.png");
 }
 .cloud {
 display:none;
@@ -417,7 +404,7 @@ display:none;
 .menu-open .menu-toggle .line:nth-child(2){opacity:0;}
 .menu-open .menu-toggle .line:nth-child(3){transform:translateY(-16px) rotate(-45deg);}
 
-/* ------------- OVERLAY MENU ------------- */
+// OVERLAY MENU
 .menu-header{
   position:fixed;
   background:#FFF5E9;
@@ -437,7 +424,7 @@ display:none;
   pointer-events:auto;
 	position: sticky;
 	top: 0;
-  animation: fadeInUp 1.2s ease-out forwards;
+  animation: fadeInDown 0.7s ease-out forwards;
   opacity: 0; 
 }
 
@@ -471,89 +458,86 @@ display:none;
 
 
 // Positionnement des chats et des fleurs
-
-.menu-header .cat {
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 1;
-  width: 8em;
-  height: 8em;
-  animation: floatCat 2s infinite;
-  will-change: transform;
-
-  &.purple_cat {
-    background-image: url('../../assets/purple_cat.png');
-    top: 11vh;
-    left: 22vw;
+.menu-header {
+  .cat,
+  .flower {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
   }
-  &.gray_cat {
-    background-image: url('../../assets/gray_cat.png');
-    top: 45vh;
-    right: 22vw;
-  }
-  &.orange_cat {
-    background-image: url('../../assets/orange_cat.png');
-    top: 64vh;
-    left: 2vw;
-  }
-}
 
-
-.menu-header .flower {
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-
-  &.orchid {
-    background-image: url('../../assets/orchid.png');
+  .cat {
     width: 8em;
     height: 8em;
-    top: 4vh;
-    left: -3vw;
+    animation: floatCat 2s infinite;
+    will-change: transform;
+
+    &.purple_cat {
+      background-image: url('../../assets/images/characters/purple_cat.png');
+      top: 11vh;
+      left: 22vw;
+    }
+    &.gray_cat {
+      background-image: url('../../assets/images/characters/gray_cat.png');
+      top: 45vh;
+      right: 22vw;
+    }
+    &.orange_cat {
+      background-image: url('../../assets/images/characters/orange_cat.png');
+      top: 64vh;
+      left: 2vw;
+    }
   }
-  &.sunflower {
-    background-image: url('../../assets/sunflower.png');
-    width: 11em;
-    height: 11em;
-    top: 5vh;
-    right: 20vw;
-  }
-  &.random_flower {
-    background-image: url('../../assets/random_flower.png');
-    width: 4em;
-    height: 4em;
-    top: 35vh;
-    right: -1vw;
-  }
-  &.multi_flowers {
-    background-image: url('../../assets/multi_flowers.png');
-    width: 4em;
-    height: 4em;
-    top: 44vh;
-    left: 18vw;
-  }
+
+  .flower {
+    &.orchid {
+      background-image: url('../../assets/images/decorations/orchid.png');
+      width: 8em;
+      height: 8em;
+      top: 4vh;
+      left: -3vw;
+    }
+    &.sunflower {
+      background-image: url('../../assets/images/decorations/Sunflower.png');
+      width: 11em;
+      height: 11em;
+      top: 5vh;
+      right: 20vw;
+    }
+    &.random_flower {
+      background-image: url('../../assets/images/decorations/random_flower.png');
+      width: 4em;
+      height: 4em;
+      top: 35vh;
+      right: -1vw;
+    }
+    &.multi_flowers {
+      background-image: url('../../assets/images/decorations/multi_flowers.png');
+      width: 4em;
+      height: 4em;
+      top: 44vh;
+      left: 18vw;
+    }
     &.hibiscus_footer {
-    background-image: url('../../assets/hibiscus_footer.png');
-    width: 30em;
-    height: 30em;
-    top: 60vh;
-    right: -14vw;
+      background-image: url('../../assets/images/decorations/hibiscus_footer.png');
+      width: 30em;
+      height: 30em;
+      top: 60vh;
+      right: -14vw;
+    }
   }
 }
+
 
 
 @media (max-width: 768px) {
-.menu-header .flower, .menu-header .cat {
-  display:none;
+.menu-header .flower, .menu-header .cat, .nav-spacer, .main-navigation ul {
+  display:none !important;
 }
 .menu-header {
- background: url('../../assets/background_menu_container.png') center / cover no-repeat;
-}
-.nav-spacer, .main-navigation ul {
-  display:none !important;
+ background: url('../../assets/images/backgrounds/background_menu_container.png') center / cover no-repeat;
 }
 .main-navigation {
   display: flex;

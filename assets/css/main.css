@@ -1,24 +1,4 @@
 @charset "UTF-8";
-.fade-in-up {
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-.fade-in-up p {
-  animation: fadeInDown 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-.fade-in-down {
-  animation: fadeInDown 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-.fade-in-down img {
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -39,11 +19,6 @@
     transform: translateY(0);
   }
 }
-.animation-wrapper {
-  all: unset;
-  display: contents;
-}
-
 @keyframes rotate-flower {
   from {
     transform: rotate(0deg);
@@ -52,6 +27,56 @@
     transform: rotate(360deg);
   }
 }
+@keyframes floatLogo {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(4px, -6px);
+  }
+  50% {
+    transform: translate(0, 4px);
+  }
+  75% {
+    transform: translate(-4px, -3px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes floatCat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.fade-in-up,
+.fade-in-down,
+.fade-in-up p,
+.fade-in-down img {
+  opacity: 0;
+}
+
+.fade-in-up,
+.fade-in-down img {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.fade-in-down,
+.fade-in-up p {
+  animation: fadeInDown 1.2s ease-out forwards;
+}
+
+.animation-wrapper {
+  all: unset;
+  display: contents;
+}
+
 .story h2::after,
 .story__article::after,
 #studio h2::before,
@@ -78,7 +103,7 @@
 }
 
 .flower--sunflower {
-  background-image: url("../../assets/Sunflower.png");
+  background-image: url("../../assets/images/decorations/Sunflower.png");
   width: 12em;
   height: 12em;
   top: -9vh;
@@ -86,7 +111,7 @@
 }
 
 .flower--orchid {
-  background-image: url("../../assets/orchid.png");
+  background-image: url("../../assets/images/decorations/orchid.png");
   width: 10em;
   height: 10em;
   top: -10vh;
@@ -108,7 +133,7 @@
 }
 
 .oscars-cloud {
-  background: url("../../assets/nuage_orange_oscar.png") no-repeat center;
+  background: url("../../assets/images/decorations/nuage_orange_oscar.png") no-repeat center;
   background-size: 103%;
   padding: 4rem 2.8rem;
   display: flex;
@@ -290,34 +315,6 @@ h2.visible span:nth-child(20), h3.visible span:nth-child(20) {
     position: static;
   }
 }
-@keyframes floatLogo {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(4px, -6px);
-  }
-  50% {
-    transform: translate(0, 4px);
-  }
-  75% {
-    transform: translate(-4px, -3px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes floatCat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .story #characters h3 {
   display: flex;
   align-items: flex-start;
@@ -345,7 +342,7 @@ swiper-slide img {
   }
 }
 .story #place {
-  background-image: url("../../assets/Studio_Koukaki-image_place.png");
+  background-image: url("../../assets/images/backgrounds/Studio_Koukaki-image_place.png");
   position: relative;
 }
 
@@ -375,7 +372,7 @@ swiper-slide img {
 
 @media (max-width: 920px) {
   .story #place {
-    background-image: url("../../assets/place_bg.png");
+    background-image: url("../../assets/images/backgrounds/place_bg.png");
   }
   .cloud {
     display: none;
@@ -428,7 +425,6 @@ swiper-slide img {
   transform: translateY(-16px) rotate(-45deg);
 }
 
-/* ------------- OVERLAY MENU ------------- */
 .menu-header {
   position: fixed;
   background: #FFF5E9;
@@ -448,7 +444,7 @@ swiper-slide img {
   pointer-events: auto;
   position: sticky;
   top: 0;
-  animation: fadeInUp 1.2s ease-out forwards;
+  animation: fadeInDown 0.7s ease-out forwards;
   opacity: 0;
 }
 
@@ -480,69 +476,65 @@ swiper-slide img {
   filter: drop-shadow(0px 0px 5px #FF5C00);
 }
 
-.menu-header .cat {
+.menu-header .cat,
+.menu-header .flower {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 1;
+}
+.menu-header .cat {
   width: 8em;
   height: 8em;
   animation: floatCat 2s infinite;
   will-change: transform;
 }
 .menu-header .cat.purple_cat {
-  background-image: url("../../assets/purple_cat.png");
+  background-image: url("../../assets/images/characters/purple_cat.png");
   top: 11vh;
   left: 22vw;
 }
 .menu-header .cat.gray_cat {
-  background-image: url("../../assets/gray_cat.png");
+  background-image: url("../../assets/images/characters/gray_cat.png");
   top: 45vh;
   right: 22vw;
 }
 .menu-header .cat.orange_cat {
-  background-image: url("../../assets/orange_cat.png");
+  background-image: url("../../assets/images/characters/orange_cat.png");
   top: 64vh;
   left: 2vw;
 }
-
-.menu-header .flower {
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
 .menu-header .flower.orchid {
-  background-image: url("../../assets/orchid.png");
+  background-image: url("../../assets/images/decorations/orchid.png");
   width: 8em;
   height: 8em;
   top: 4vh;
   left: -3vw;
 }
 .menu-header .flower.sunflower {
-  background-image: url("../../assets/sunflower.png");
+  background-image: url("../../assets/images/decorations/Sunflower.png");
   width: 11em;
   height: 11em;
   top: 5vh;
   right: 20vw;
 }
 .menu-header .flower.random_flower {
-  background-image: url("../../assets/random_flower.png");
+  background-image: url("../../assets/images/decorations/random_flower.png");
   width: 4em;
   height: 4em;
   top: 35vh;
   right: -1vw;
 }
 .menu-header .flower.multi_flowers {
-  background-image: url("../../assets/multi_flowers.png");
+  background-image: url("../../assets/images/decorations/multi_flowers.png");
   width: 4em;
   height: 4em;
   top: 44vh;
   left: 18vw;
 }
 .menu-header .flower.hibiscus_footer {
-  background-image: url("../../assets/hibiscus_footer.png");
+  background-image: url("../../assets/images/decorations/hibiscus_footer.png");
   width: 30em;
   height: 30em;
   top: 60vh;
@@ -550,14 +542,11 @@ swiper-slide img {
 }
 
 @media (max-width: 768px) {
-  .menu-header .flower, .menu-header .cat {
-    display: none;
+  .menu-header .flower, .menu-header .cat, .nav-spacer, .main-navigation ul {
+    display: none !important;
   }
   .menu-header {
-    background: url("../../assets/background_menu_container.png") center/cover no-repeat;
-  }
-  .nav-spacer, .main-navigation ul {
-    display: none !important;
+    background: url("../../assets/images/backgrounds/background_menu_container.png") center/cover no-repeat;
   }
   .main-navigation {
     display: flex;

@@ -1,43 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const titres = document.querySelectorAll('h2, h3');
+// scroll.js  – animation mot-par-mot et apparition des titres
+document.addEventListener('DOMContentLoaded', () => {
 
-  // Pour chaque titre trouvé, récupère le texte du titre
-  titres.forEach(function (titre) {
-    const texteComplet = titre.textContent.trim();
-    const mots = texteComplet.split(' ');
-
-    // Vide le contenu actuel du titre
-    titre.innerHTML = '';
-
-    // Pour chaque mot, crée un <span> qui l'encapsule
-    mots.forEach(function (mot, index) {
-      const span = document.createElement('span');
-      span.textContent = mot;
-
-      // Ajoute un espace sauf après le dernier mot
-      titre.appendChild(span);
-      if (index < mots.length - 1) {
-        titre.appendChild(document.createTextNode(' '));
-      }
-    });
+  /*Découpe chaque h2 / h3 en <span>  */
+  document.querySelectorAll('h2, h3').forEach(title => {
+    title.innerHTML = title.textContent                        // texte brut
+      .trim()                                                  // retire les blancs inutiles
+      .split(' ')                                              // coupe aux espaces
+      .map(word => `<span>${word}</span>`)                     // enveloppe chaque mot
+      .join(' ');                                              // re-créé les espaces
   });
 
-  // Observer qui déclenche une animation quand un titre entre dans la fenêtre
-  const observer = new IntersectionObserver(function (entries, observerInstance) {
-    entries.forEach(function (entry) {
-      // Si l'élément observé est visible à l'écran, ajout de class qui déclenche l'animation
+  /* IntersectionObserver pour l'effet des titres */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-
-        // Arrête d'observer l'élément (l’animation ne se relance plus)
-        observerInstance.unobserve(entry.target);
+        entry.target.classList.add('visible'); // déclenche l’animation CSS
+        observer.unobserve(entry.target);      // on n’a plus besoin d’observer
       }
     });
   });
 
-  // Observe chaque titre h2 et h3
-  const tousLesTitres = document.querySelectorAll('h2, h3');
-  tousLesTitres.forEach(function (titre) {
-    observer.observe(titre);
-  });
+  /* ---------------- Lance l’observation sur tous les titres ------- */
+  document.querySelectorAll('h2, h3').forEach(t => observer.observe(t));
 });

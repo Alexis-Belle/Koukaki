@@ -1,84 +1,74 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-// ANIMATION CHARGEMENT PROGRESSIF FADE IN
-document.addEventListener("DOMContentLoaded", () => {
+  // Apparition progressive des sections
+
   const sections = document.querySelectorAll('.fade-in-up, .fade-in-down');
 
-  sections.forEach((section, index) => {
-    const delay = index === 0 ? 0 : (index) * 1;
-
+  sections.forEach(function (section, index) {
+    const delay = index * 0.9; // délai progressif selon la section
     section.classList.add('start');
-    section.style.animationDelay = `${delay}s`;
+    section.style.animationDelay = delay + 's';
 
-    const paragraphs = section.querySelectorAll('p');
-    paragraphs.forEach((p, i) => {
-      if (index === 0 && i === 0) {
-        // Pas de délai pour le tout premier paragraphe de la première section
-        p.style.animationDelay = '0s';
-      } else {
-        p.style.animationDelay = `${delay}s`;
+    const elements = section.querySelectorAll('p, img');
+
+    elements.forEach(function (element, i) {
+      let elementDelay = delay;
+
+      // Si c’est le tout premier paragraphe de la première section, pas de délai
+      if (index === 0 && element.tagName === 'P' && i === 0) {
+        elementDelay = 0;
       }
-    });
 
-    section.querySelectorAll('img').forEach(img => {
-      img.style.animationDelay = `${delay}s`;
+      element.style.animationDelay = elementDelay + 's';
     });
   });
-});
 
+  // Initialisation de Skrollr
 
-
-// Initialisation de Skrollr
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof skrollr !== "undefined") {
+  if (typeof skrollr !== 'undefined') {
     skrollr.init({
       forceHeight: false
     });
   }
-});
 
+  // Initialisation de SwiperJS
 
-// Initialisation SwiperJS
-
-document.addEventListener('DOMContentLoaded', () => {
   if (typeof Swiper !== 'undefined') {
-    new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper', {
       slidesPerView: 1,
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
-      },
+        clickable: true
+      }
     });
   }
-});
 
+  // 4. Menu burger (plein écran)
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const burger  = document.querySelector('.menu-toggle');
+  const burger = document.querySelector('.menu-toggle');
   const overlay = document.querySelector('.menu-header');
-  const body    = document.body;
+  const body = document.body;
 
-  burger.addEventListener('click', () => {
-    const open = body.classList.toggle('menu-open');
-    burger.setAttribute('aria-expanded', open);
-    overlay.hidden = !open;
-    body.style.overflow = open ? 'hidden' : '';  // bloque scroll
-  });
+  if (burger && overlay) {
 
-  // Ferme au clic sur un lien
-  overlay.querySelectorAll('a').forEach(link=>{
-    link.addEventListener('click', () => {
-      body.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-      overlay.hidden = true;
-      body.style.overflow = '';
+    // Fonction pour ouvrir ou fermer le menu
+    function toggleMenu() {
+      const menuEstOuvert = body.classList.toggle('menu-open');
+
+      burger.setAttribute('aria-expanded', menuEstOuvert);
+      overlay.hidden = !menuEstOuvert;
+
+      // Empêche de scroller quand le menu est ouvert
+      body.style.overflow = menuEstOuvert ? 'hidden' : '';
+    }
+
+    burger.addEventListener('click', toggleMenu);
+
+    // Ferme le menu quand on clique sur un lien du menu
+    const liensMenu = overlay.querySelectorAll('a');
+    liensMenu.forEach(function (lien) {
+      lien.addEventListener('click', toggleMenu);
     });
-  });
+  }
+  
 });
-
-
-
-
-
-

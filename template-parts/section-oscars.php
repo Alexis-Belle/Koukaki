@@ -7,7 +7,7 @@
                         <span>Film Animated de 2022 !</span>
                   </h4>
             </div>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.png"
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/UI/18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.png"
                   alt="Logo Oscars" />
       </div>
       <div class="flower flower--sunflower"></div>
