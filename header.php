@@ -53,14 +53,14 @@
                     <li><a href="#studio">Studio&nbsp;Koukaki</a></li>
                 </ul>
                 <span>STUDIO KOUKAKI</span>
-                <!-- Fleurs -->
+                <!-- Décorations Fleurs -->
                 <div class="flower orchid"></div>
                 <div class="flower sunflower"></div>
                 <div class="flower hibiscus_footer"></div>
                 <div class="flower random_flower"></div>
                 <div class="flower multi_flowers"></div>
 
-                <!-- Chats -->
+                <!-- Décorations Chats -->
                 <div class="cat purple_cat"></div>
                 <div class="cat gray_cat"></div>
                 <div class="cat orange_cat"></div>

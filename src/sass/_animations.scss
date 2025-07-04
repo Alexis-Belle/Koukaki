@@ -288,15 +288,22 @@ h2.visible span, h3.visible span {
 
 }
 
-
 // ANIMATION PARTIE PERSONNAGE
+
+.story #characters {
+  margin: 2em;
+}
+
+.main-character {
+width: 100%;
+}
 
 .story #characters h3 {
   display: flex;
   align-items: flex-start;
   gap: 0.25em;
-  padding-left: 35px;
-  background-position: 0% center;
+  padding-left: 10%;
+  background-position: 10%;
 }
 
 swiper-slide {
@@ -310,16 +317,16 @@ swiper-slide img {
 }
 
 @media (max-width: 1040px) {
-
+  .story #characters {
+  margin: 2em 0em;
+}
   .story #characters h3 {
   display: block;
   background-position: center;
   padding-left: 10%;
   gap: 0em;
-
 }
 }
-
 
 // ANIMATION PARTIE LIEU
 
@@ -531,7 +538,6 @@ display:none;
 }
 
 
-
 @media (max-width: 768px) {
 .menu-header .flower, .menu-header .cat, .nav-spacer, .main-navigation ul {
   display:none !important;
@@ -544,3 +550,4 @@ display:none;
   justify-content: center;
 }
 }
+

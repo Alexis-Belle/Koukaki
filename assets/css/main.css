@@ -315,12 +315,20 @@ h2.visible span:nth-child(20), h3.visible span:nth-child(20) {
     position: static;
   }
 }
+.story #characters {
+  margin: 2em;
+}
+
+.main-character {
+  width: 100%;
+}
+
 .story #characters h3 {
   display: flex;
   align-items: flex-start;
   gap: 0.25em;
-  padding-left: 35px;
-  background-position: 0% center;
+  padding-left: 10%;
+  background-position: 10%;
 }
 
 swiper-slide {
@@ -334,6 +342,9 @@ swiper-slide img {
 }
 
 @media (max-width: 1040px) {
+  .story #characters {
+    margin: 2em 0em;
+  }
   .story #characters h3 {
     display: block;
     background-position: center;

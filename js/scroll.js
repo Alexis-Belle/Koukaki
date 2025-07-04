@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------------- Lance l’observation sur tous les titres ------- */
+  /*Lance l’observation sur tous les titres*/
   document.querySelectorAll('h2, h3').forEach(t => observer.observe(t));
 });
