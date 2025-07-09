@@ -23,25 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Initialisation de Skrollr
 
-  if (typeof skrollr !== 'undefined') {
-    skrollr.init({
-      forceHeight: false
-    });
-  }
+// Initialisation de Skrollr
+if (typeof skrollr !== 'undefined') {
+  skrollr.init({ forceHeight: false });
+}
 
-  // Initialisation de SwiperJS
+// Initialisation de Swiper
+if (typeof Swiper !== 'undefined') {
+  new Swiper('.swiper', {
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+}
 
-  if (typeof Swiper !== 'undefined') {
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 1,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
-    });
-  }
+
 
   // 4. Menu burger (plein écran)
 

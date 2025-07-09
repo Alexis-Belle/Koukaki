@@ -89,35 +89,6 @@
   transform-origin: center center;
 }
 
-.site-footer::before,
-.site-footer::after {
-  display: none;
-}
-
-.flower {
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.flower--sunflower {
-  background-image: url("../../assets/images/decorations/Sunflower.png");
-  width: 12em;
-  height: 12em;
-  top: -9vh;
-  left: 5vw;
-}
-
-.flower--orchid {
-  background-image: url("../../assets/images/decorations/orchid.png");
-  width: 10em;
-  height: 10em;
-  top: -10vh;
-  right: -7vw;
-}
-
 #oscars {
   margin-top: 6%;
   position: relative;
@@ -159,6 +130,35 @@
   width: 25%;
 }
 
+.site-footer::before,
+.site-footer::after {
+  display: none;
+}
+
+.flower {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flower--sunflower {
+  background-image: url("../../assets/images/decorations/Sunflower.png");
+  width: 12em;
+  height: 12em;
+  top: -9vh;
+  left: 5vw;
+}
+
+.flower--orchid {
+  background-image: url("../../assets/images/decorations/orchid.png");
+  width: 10em;
+  height: 10em;
+  top: -10vh;
+  right: -7vw;
+}
+
 @media (max-width: 1040px) {
   .oscars-wrapper {
     flex-direction: column;
@@ -170,12 +170,19 @@
   }
 }
 @media (max-width: 720px) {
+  .oscars-cloud {
+    background-size: 105%;
+  }
   .oscars-wrapper img {
     width: 60%;
   }
   .oscars-title {
     font-size: 24px;
     align-items: center;
+    line-height: 30px;
+  }
+  #oscars .flower {
+    display: none;
   }
 }
 h2 span, h3 span {
@@ -249,6 +256,66 @@ h2.visible span:nth-child(19), h3.visible span:nth-child(19) {
 }
 h2.visible span:nth-child(20), h3.visible span:nth-child(20) {
   transition-delay: 4.75s;
+}
+h2.visible span:nth-child(21), h3.visible span:nth-child(21) {
+  transition-delay: 5s;
+}
+h2.visible span:nth-child(22), h3.visible span:nth-child(22) {
+  transition-delay: 5.25s;
+}
+h2.visible span:nth-child(23), h3.visible span:nth-child(23) {
+  transition-delay: 5.5s;
+}
+h2.visible span:nth-child(24), h3.visible span:nth-child(24) {
+  transition-delay: 5.75s;
+}
+h2.visible span:nth-child(25), h3.visible span:nth-child(25) {
+  transition-delay: 6s;
+}
+h2.visible span:nth-child(26), h3.visible span:nth-child(26) {
+  transition-delay: 6.25s;
+}
+h2.visible span:nth-child(27), h3.visible span:nth-child(27) {
+  transition-delay: 6.5s;
+}
+h2.visible span:nth-child(28), h3.visible span:nth-child(28) {
+  transition-delay: 6.75s;
+}
+h2.visible span:nth-child(29), h3.visible span:nth-child(29) {
+  transition-delay: 7s;
+}
+h2.visible span:nth-child(30), h3.visible span:nth-child(30) {
+  transition-delay: 7.25s;
+}
+h2.visible span:nth-child(31), h3.visible span:nth-child(31) {
+  transition-delay: 7.5s;
+}
+h2.visible span:nth-child(32), h3.visible span:nth-child(32) {
+  transition-delay: 7.75s;
+}
+h2.visible span:nth-child(33), h3.visible span:nth-child(33) {
+  transition-delay: 8s;
+}
+h2.visible span:nth-child(34), h3.visible span:nth-child(34) {
+  transition-delay: 8.25s;
+}
+h2.visible span:nth-child(35), h3.visible span:nth-child(35) {
+  transition-delay: 8.5s;
+}
+h2.visible span:nth-child(36), h3.visible span:nth-child(36) {
+  transition-delay: 8.75s;
+}
+h2.visible span:nth-child(37), h3.visible span:nth-child(37) {
+  transition-delay: 9s;
+}
+h2.visible span:nth-child(38), h3.visible span:nth-child(38) {
+  transition-delay: 9.25s;
+}
+h2.visible span:nth-child(39), h3.visible span:nth-child(39) {
+  transition-delay: 9.5s;
+}
+h2.visible span:nth-child(40), h3.visible span:nth-child(40) {
+  transition-delay: 9.75s;
 }
 
 .banner {
